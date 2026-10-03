@@ -69,7 +69,7 @@ export const LogoAnimationIntro: React.FC = () => {
   return (
     <div
       aria-label="MH Marketing Logo Animation Intro"
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#020612] select-none transition-all duration-500 ease-out ${
+      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#020612] select-none transition-all duration-500 ease-out ${
         isFading ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
       }`}
     >
@@ -81,50 +81,39 @@ export const LogoAnimationIntro: React.FC = () => {
         <div className="absolute -bottom-[10%] -right-[10%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,transparent_70%)] blur-2xl" />
       </div>
 
-      {/* Top Bar: Brand Pill & Skip Button */}
-      <div className="absolute top-4 sm:top-6 left-4 sm:left-8 right-4 sm:right-8 flex items-center justify-between z-20">
-        {/* Brand Tag */}
-        <div className="flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#050D24]/85 border border-[#D4AF37]/30 backdrop-blur-md shadow-lg">
-          <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
-          <span className="text-[11px] sm:text-xs font-black metallic-gold-text tracking-wider uppercase">
-            MH Marketing
+      {/* Top Controls: Sound Toggle & Skip (Clean top-right, no duplicate brand text) */}
+      <div className="absolute top-4 sm:top-6 right-4 sm:right-8 flex items-center gap-2 sm:gap-3 z-20">
+        {/* Sound Toggle (if video has audio) */}
+        <button
+          type="button"
+          onClick={() => {
+            if (videoRef.current) {
+              videoRef.current.muted = !videoRef.current.muted;
+              setIsMuted(videoRef.current.muted);
+            }
+          }}
+          className="p-2 sm:p-2.5 rounded-full bg-[#050D24]/90 border border-[#D4AF37]/30 text-[#FFF4C2] hover:border-[#D4AF37] transition-all cursor-pointer backdrop-blur-md shadow-lg"
+          aria-label={isMuted ? "Unmute intro video" : "Mute intro video"}
+        >
+          {isMuted ? (
+            <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
+          ) : (
+            <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4AF37]" />
+          )}
+        </button>
+
+        {/* Skip Intro Button */}
+        <button
+          type="button"
+          onClick={handleComplete}
+          className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#050D24]/90 hover:bg-[#091838] border border-[#D4AF37]/40 hover:border-[#D4AF37] text-white text-xs sm:text-[13px] font-bold tracking-wide transition-all shadow-[0_4px_20px_rgba(0,0,0,0.6)] cursor-pointer group backdrop-blur-md"
+          aria-label="Skip logo animation intro"
+        >
+          <span className="text-slate-200 group-hover:text-white transition-colors">
+            Skip Intro
           </span>
-        </div>
-
-        {/* Action Controls: Sound Toggle & Skip */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Sound Toggle (if video has audio) */}
-          <button
-            type="button"
-            onClick={() => {
-              if (videoRef.current) {
-                videoRef.current.muted = !videoRef.current.muted;
-                setIsMuted(videoRef.current.muted);
-              }
-            }}
-            className="p-2 sm:p-2.5 rounded-full bg-[#050D24]/85 border border-[#D4AF37]/25 text-[#FFF4C2] hover:border-[#D4AF37] transition-all cursor-pointer backdrop-blur-md"
-            aria-label={isMuted ? "Unmute intro video" : "Mute intro video"}
-          >
-            {isMuted ? (
-              <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
-            ) : (
-              <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4AF37]" />
-            )}
-          </button>
-
-          {/* Skip Intro Button */}
-          <button
-            type="button"
-            onClick={handleComplete}
-            className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#050D24]/90 hover:bg-[#091838] border border-[#D4AF37]/40 hover:border-[#D4AF37] text-white text-xs sm:text-[13px] font-bold tracking-wide transition-all shadow-[0_4px_20px_rgba(0,0,0,0.6)] cursor-pointer group backdrop-blur-md"
-            aria-label="Skip logo animation intro"
-          >
-            <span className="text-slate-200 group-hover:text-white transition-colors">
-              Skip Intro
-            </span>
-            <FastForward className="w-3.5 h-3.5 text-[#D4AF37] group-hover:translate-x-0.5 transition-transform" />
-          </button>
-        </div>
+          <FastForward className="w-3.5 h-3.5 text-[#D4AF37] group-hover:translate-x-0.5 transition-transform" />
+        </button>
       </div>
 
       {/* Main Video Presentation: Perfectly Sized Vertical Device/Mobile Frame (Zero Logo Cropping) */}

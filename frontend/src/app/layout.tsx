@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { CinematicBackground } from "@/components/CinematicBackground";
+import { LogoAnimationIntro } from "@/components/LogoAnimationIntro";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -154,6 +155,7 @@ export default function RootLayout({
         </div>
         <Footer />
         <FloatingWhatsApp />
+        <LogoAnimationIntro />
       </body>
     </html>
   );

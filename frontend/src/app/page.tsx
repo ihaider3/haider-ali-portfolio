@@ -6,15 +6,10 @@ import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { CertificatesSection } from "@/components/CertificatesSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { ContactSection } from "@/components/ContactSection";
-import { LogoAnimationIntro } from "@/components/LogoAnimationIntro";
 
 export default function Home() {
   return (
-    <>
-      {/* 00 — LOGO ANIMATION INTRO: Plays 3-4s on visit, then smoothly reveals portfolio */}
-      <LogoAnimationIntro />
-
-      <main className="w-full relative flex flex-col">
+    <main className="w-full relative flex flex-col">
         {/* 01 — HERO: Meet Haider Ali */}
         <HeroSection />
 
@@ -36,6 +31,5 @@ export default function Home() {
       {/* 07 — CONTACT: Start a Project & 1-Line Social Connection Box */}
       <ContactSection />
     </main>
-  </>
   );
 }
