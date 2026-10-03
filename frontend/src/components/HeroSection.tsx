@@ -364,11 +364,11 @@ export const HeroSection: React.FC = () => {
             {/* Main H1 Heading */}
             <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-extrabold tracking-tight text-white leading-[1.12] mb-4 sm:mb-5">
               DIGITAL MARKETING THAT TURNS{" "}
-              <span className="metallic-gold-heading drop-shadow-[0_0_35px_rgba(212,175,55,0.45)]">
+              <span className="metallic-gold-heading">
                 ATTENTION
               </span>{" "}
               INTO{" "}
-              <span className="metallic-gold-heading drop-shadow-[0_0_35px_rgba(212,175,55,0.45)]">
+              <span className="metallic-gold-heading">
                 GROWTH.
               </span>
             </h1>

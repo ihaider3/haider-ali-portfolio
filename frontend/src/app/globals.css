@@ -87,20 +87,17 @@
   }
 }
 
-/* Metallic Gold Typography Utilities (Cinematic Specular Mirror Chrome Finish) */
+/* Metallic Gold Typography Utilities - Professional Balanced Luxury Finish */
 .metallic-gold-text,
 .gold-metallic-text,
 .metallic-gold {
   background: linear-gradient(
-    135deg,
-    #FFFFFF 0%,
-    #FFF7D9 12%,
-    #FCE59F 26%,
-    #E8BA45 42%,
-    #9E6F12 56%,
-    #FFF4C4 70%,
-    #E5BA42 84%,
-    #A07216 100%
+    180deg,
+    #FCEAB3 0%,
+    #F5D172 25%,
+    #E5B744 52%,
+    #BF8B23 80%,
+    #DDAE3B 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -109,20 +106,17 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 2px 14px rgba(212, 175, 55, 0.55));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 8px rgba(212, 175, 55, 0.25));
 }
 
 .metallic-gold-heading {
   background: linear-gradient(
-    135deg,
-    #FFFFFF 0%,
-    #FFF8DE 10%,
-    #FFE89E 24%,
-    #EBB738 40%,
-    #8F5E0B 54%,
-    #FFF3B8 68%,
-    #EBB738 82%,
-    #A27214 100%
+    180deg,
+    #FDECB8 0%,
+    #F7D475 22%,
+    #E8BB48 48%,
+    #C49026 78%,
+    #DFB13D 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -131,17 +125,16 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 2px 26px rgba(212, 175, 55, 0.65)) drop-shadow(0 0 10px rgba(255, 244, 194, 0.35));
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 10px rgba(212, 175, 55, 0.28));
 }
 
 .metallic-gold-subtle {
   background: linear-gradient(
-    135deg,
-    #FFFFFF 0%,
-    #FFF5CE 20%,
-    #F2C960 45%,
-    #A37318 70%,
-    #FFE9A0 100%
+    180deg,
+    #FCEAB3 0%,
+    #F5D172 35%,
+    #D8A535 70%,
+    #E8BA45 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -150,7 +143,7 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 1px 8px rgba(212, 175, 55, 0.35));
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 6px rgba(212, 175, 55, 0.2));
 }
 
 /* Metallic Gold Borders & Frames */

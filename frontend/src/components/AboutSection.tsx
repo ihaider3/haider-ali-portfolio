@@ -36,7 +36,7 @@ export const AboutSection: React.FC = () => {
 
           <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white tracking-tight leading-[1.18] mb-3">
             Strategy, Creativity &amp; Digital Growth —{" "}
-            <span className="metallic-gold-heading drop-shadow-[0_0_25px_rgba(212,175,55,0.45)]">
+            <span className="metallic-gold-heading">
               Built Around Your Business.
             </span>
           </h2>

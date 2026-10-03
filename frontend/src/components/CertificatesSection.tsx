@@ -56,7 +56,7 @@ export const CertificatesSection: React.FC = () => {
 
           {/* 1 Single Line Section Title in Specular Metallic Gold */}
           <h2 className="text-2xl sm:text-4xl lg:text-[2.65rem] font-extrabold tracking-tight leading-tight whitespace-normal text-white">
-            <span className="metallic-gold-heading drop-shadow-[0_0_28px_rgba(212,175,55,0.5)]">
+            <span className="metallic-gold-heading">
               OFFICIALLY VERIFIED CREDENTIALS &amp; INDUSTRY CERTIFICATIONS
             </span>
           </h2>

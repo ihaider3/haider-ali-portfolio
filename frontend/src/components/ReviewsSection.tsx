@@ -226,7 +226,7 @@ export const ReviewsSection: React.FC = () => {
             {/* 2-Line High-Impact Headline matching design reference */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
               Real Feedback. Real People. <br className="hidden sm:inline" />
-              <span className="metallic-gold-heading drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">
+              <span className="metallic-gold-heading">
                 Real Work.
               </span>
             </h2>

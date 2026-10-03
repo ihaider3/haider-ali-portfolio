@@ -172,7 +172,7 @@ export const ProjectShowcase: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-[2.85rem] font-extrabold tracking-tight leading-tight whitespace-normal text-white">
-            <span className="metallic-gold-heading drop-shadow-[0_0_35px_rgba(212,175,55,0.65)]">
+            <span className="metallic-gold-heading">
               PROVEN CLIENT PROJECTS &amp; MANAGED BRANDS
             </span>
           </h2>

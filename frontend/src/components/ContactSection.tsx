@@ -195,7 +195,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight whitespace-normal text-white">
-            <span className="metallic-gold-heading drop-shadow-[0_0_28px_rgba(212,175,55,0.5)]">
+            <span className="metallic-gold-heading">
               LET’S TALK &amp; SCALE YOUR BUSINESS
             </span>
           </h2>
