@@ -1,0 +1,35 @@
+[
+  {
+    "id": "INQ-20261003-1002",
+    "timestamp": "2026-10-03T11:04:02.297Z",
+    "submittedAt": "03-Oct-2026, 4:04 pm",
+    "fullName": "Vercel Readiness Test",
+    "phone": "+92 331 2018 512",
+    "email": "lead@mhmarketing.com",
+    "service": "Meta Advertising",
+    "message": "Testing contact submission on Next.js frontend route handler.",
+    "status": "New"
+  },
+  {
+    "id": "INQ-20261003-3657",
+    "timestamp": "2026-10-03T09:21:53.501Z",
+    "submittedAt": "03-Oct-2026, 2:21 pm",
+    "fullName": "Ali",
+    "phone": "03324759947",
+    "email": "haideraliworrld789@gmail.com",
+    "service": "Meta Ads",
+    "message": "",
+    "status": "New"
+  },
+  {
+    "id": "INQ-20261003-6697",
+    "timestamp": "2026-10-03T09:15:08.784Z",
+    "submittedAt": "03-Oct-2026, 2:15 pm",
+    "fullName": "Farhan Tariq",
+    "phone": "+92 331 2018 512",
+    "email": "farhan@isbinvestment.com",
+    "service": "Lead Generation",
+    "message": "Looking for overseas real estate buyer leads.",
+    "status": "New"
+  }
+]
