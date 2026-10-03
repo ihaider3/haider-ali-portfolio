@@ -17,7 +17,7 @@ export const LogoAnimationIntro: React.FC = () => {
       setIsVisible(false);
       // Ensure body scroll is unlocked
       document.body.style.overflow = "";
-    }, 700);
+    }, 500);
   };
 
   useEffect(() => {
@@ -26,13 +26,23 @@ export const LogoAnimationIntro: React.FC = () => {
 
     const video = videoRef.current;
     if (video) {
-      video.play().catch(() => {
-        // Fallback for strict browser autoplay policies
-      });
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay fallback for strict browser policies
+        });
+      }
 
       const handleTimeUpdate = () => {
         if (video.duration) {
           setProgress((video.currentTime / video.duration) * 100);
+          // Auto-trigger completion as soon as animation concludes (~2.5s)
+          if (video.currentTime >= 2.5) {
+            handleComplete();
+          }
         }
       };
 
@@ -43,10 +53,10 @@ export const LogoAnimationIntro: React.FC = () => {
       };
     }
 
-    // Safety timeout: video is ~4 seconds, auto-complete after 4.5s max
+    // Safety timeout: video is ~2.6s, complete after 2.8s max
     const timer = setTimeout(() => {
       handleComplete();
-    }, 4500);
+    }, 2800);
 
     return () => {
       clearTimeout(timer);
@@ -59,14 +69,14 @@ export const LogoAnimationIntro: React.FC = () => {
   return (
     <div
       aria-label="MH Marketing Logo Animation Intro"
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#020612] select-none transition-all duration-700 ease-out ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#020612] select-none transition-all duration-500 ease-out ${
         isFading ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
       }`}
     >
       {/* Cinematic Ambient Atmosphere Background */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         {/* Deep blue and gold radial glow centered behind video */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[900px] h-[500px] sm:h-[650px] bg-[radial-gradient(ellipse_at_center,rgba(30,64,175,0.25)_0%,rgba(212,175,55,0.12)_45%,transparent_75%)] blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[900px] h-[500px] sm:h-[650px] bg-[radial-gradient(ellipse_at_center,rgba(30,64,175,0.25)_0%,rgba(212,175,55,0.15)_45%,transparent_75%)] blur-3xl animate-pulse" />
         <div className="absolute -top-[10%] -left-[10%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.15)_0%,transparent_70%)] blur-2xl" />
         <div className="absolute -bottom-[10%] -right-[10%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,transparent_70%)] blur-2xl" />
       </div>
@@ -74,7 +84,7 @@ export const LogoAnimationIntro: React.FC = () => {
       {/* Top Bar: Brand Pill & Skip Button */}
       <div className="absolute top-4 sm:top-6 left-4 sm:left-8 right-4 sm:right-8 flex items-center justify-between z-20">
         {/* Brand Tag */}
-        <div className="flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#050D24]/80 border border-[#D4AF37]/30 backdrop-blur-md shadow-lg">
+        <div className="flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#050D24]/85 border border-[#D4AF37]/30 backdrop-blur-md shadow-lg">
           <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
           <span className="text-[11px] sm:text-xs font-black metallic-gold-text tracking-wider uppercase">
             MH Marketing
@@ -92,7 +102,7 @@ export const LogoAnimationIntro: React.FC = () => {
                 setIsMuted(videoRef.current.muted);
               }
             }}
-            className="p-2 sm:p-2.5 rounded-full bg-[#050D24]/80 border border-[#D4AF37]/25 text-[#FFF4C2] hover:border-[#D4AF37] transition-all cursor-pointer backdrop-blur-md"
+            className="p-2 sm:p-2.5 rounded-full bg-[#050D24]/85 border border-[#D4AF37]/25 text-[#FFF4C2] hover:border-[#D4AF37] transition-all cursor-pointer backdrop-blur-md"
             aria-label={isMuted ? "Unmute intro video" : "Mute intro video"}
           >
             {isMuted ? (
@@ -117,32 +127,36 @@ export const LogoAnimationIntro: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Video Presentation Container (Fully Responsive across Mobile, Tablet, and Desktop) */}
-      <div className="relative w-full max-w-[92vw] sm:max-w-[580px] md:max-w-[720px] lg:max-w-[840px] px-2 sm:px-4 flex flex-col items-center justify-center">
-        {/* Specular Ambient Glow Frame */}
-        <div className="relative w-full aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-black/90 border border-[#D4AF37]/40 shadow-[0_20px_60px_rgba(2,6,18,0.95),0_0_40px_rgba(212,175,55,0.28)]">
-          <video
-            ref={videoRef}
-            src="/videos/logo-animation.mp4"
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            onEnded={handleComplete}
-            className="w-full h-full object-cover object-center"
-          />
-
-          {/* Subtle Bottom Progress Track */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/50 overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-[#9A6F14] via-[#D4AF37] to-[#FFF4C2] transition-all duration-150 ease-linear shadow-[0_0_8px_#D4AF37]"
-              style={{ width: `${Math.min(100, Math.max(progress, 2))}%` }}
+      {/* Main Video Presentation: Perfectly Sized Vertical Device/Mobile Frame (Zero Logo Cropping) */}
+      <div className="relative flex flex-col items-center justify-center px-4 max-w-full">
+        {/* Specular Ambient Glow Frame Styled Like Natural Smartphone / Vertical Showcase */}
+        <div className="relative h-[66vh] sm:h-[72vh] max-h-[540px] sm:max-h-[620px] aspect-[9/16] rounded-[2rem] sm:rounded-[2.5rem] p-1.5 sm:p-2 bg-gradient-to-b from-[#D4AF37]/50 via-[#050D24] to-[#D4AF37]/35 border-2 border-[#D4AF37]/60 shadow-[0_25px_80px_rgba(0,0,0,0.95),0_0_50px_rgba(212,175,55,0.35)]">
+          {/* Inner Display Screen */}
+          <div className="relative w-full h-full rounded-[1.6rem] sm:rounded-[2.1rem] overflow-hidden bg-black flex items-center justify-center">
+            <video
+              ref={videoRef}
+              src="/videos/logo-animation.mp4"
+              poster="/videos/logo-poster.jpg"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              onEnded={handleComplete}
+              className="w-full h-full object-contain object-center"
             />
+
+            {/* Bottom Accent Progress Track */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/60 overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-[#9A6F14] via-[#D4AF37] to-[#FFF4C2] transition-all duration-150 ease-linear shadow-[0_0_8px_#D4AF37]"
+                style={{ width: `${Math.min(100, Math.max(progress, 3))}%` }}
+              />
+            </div>
           </div>
         </div>
 
         {/* Lower Tagline & Status Indicator */}
-        <div className="mt-4 sm:mt-6 flex flex-col items-center gap-1.5 text-center px-4">
+        <div className="mt-3 sm:mt-4 flex flex-col items-center gap-1 text-center px-4">
           <div className="flex items-center gap-2">
             <span className="text-xs sm:text-sm font-black metallic-gold-text tracking-wider uppercase">
               Haider Ali
@@ -152,8 +166,8 @@ export const LogoAnimationIntro: React.FC = () => {
               Digital Marketing Expert
             </span>
           </div>
-          <p className="text-[10px] sm:text-xs text-slate-400 font-medium tracking-wide">
-            Loading MH Marketing Experience...
+          <p className="text-[10px] sm:text-xs text-[#D4AF37]/70 font-medium tracking-wide">
+            Welcome to MH Marketing Experience
           </p>
         </div>
       </div>
