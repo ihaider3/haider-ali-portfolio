@@ -7,8 +7,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         disallow: ["/api/"]
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/api/"]
       }
     ],
-    sitemap: "https://mhmarketing.com/sitemap.xml"
+    sitemap: "https://mhmarketing.vercel.app/sitemap.xml",
+    host: "https://mhmarketing.vercel.app"
   };
 }

@@ -7,14 +7,14 @@ export const StructuredData: React.FC = () => {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://mhmarketing.com/#person",
+        "@id": "https://mhmarketing.vercel.app/#person",
         "name": OWNER_INFO.name,
         "jobTitle": OWNER_INFO.title,
         "description": OWNER_INFO.bioShort,
         "telephone": OWNER_INFO.phoneClean,
         "email": OWNER_INFO.email,
-        "url": "https://mhmarketing.com",
-        "image": "https://mhmarketing.com/images/profile/haider-ali.png",
+        "url": "https://mhmarketing.vercel.app",
+        "image": "https://mhmarketing.vercel.app/images/profile/haider-ali.png",
         "sameAs": [
           OWNER_INFO.socials.facebook,
           OWNER_INFO.socials.instagram,
@@ -36,7 +36,7 @@ export const StructuredData: React.FC = () => {
           "E-Commerce Growth Marketing"
         ],
         "worksFor": {
-          "@id": "https://mhmarketing.com/#organization"
+          "@id": "https://mhmarketing.vercel.app/#organization"
         },
         "address": {
           "@type": "PostalAddress",
@@ -47,11 +47,11 @@ export const StructuredData: React.FC = () => {
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://mhmarketing.com/#organization",
+        "@id": "https://mhmarketing.vercel.app/#organization",
         "name": OWNER_INFO.brandName,
-        "url": "https://mhmarketing.com",
-        "logo": "https://mhmarketing.com/images/logo/mh-marketing.jpg",
-        "image": "https://mhmarketing.com/images/portfolio-bg.png",
+        "url": "https://mhmarketing.vercel.app",
+        "logo": "https://mhmarketing.vercel.app/images/logo/mh-marketing.jpg",
+        "image": "https://mhmarketing.vercel.app/images/portfolio-bg.png",
         "description": "High-impact digital marketing services helping businesses scale across Pakistan, UK, USA, UAE, and Saudi Arabia.",
         "telephone": OWNER_INFO.phoneClean,
         "email": OWNER_INFO.email,
@@ -83,7 +83,7 @@ export const StructuredData: React.FC = () => {
           "worstRating": "1"
         },
         "founder": {
-          "@id": "https://mhmarketing.com/#person"
+          "@id": "https://mhmarketing.vercel.app/#person"
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -141,18 +141,18 @@ export const StructuredData: React.FC = () => {
       },
       {
         "@type": "WebSite",
-        "@id": "https://mhmarketing.com/#website",
-        "url": "https://mhmarketing.com",
+        "@id": "https://mhmarketing.vercel.app/#website",
+        "url": "https://mhmarketing.vercel.app",
         "name": "MH Marketing — Haider Ali Digital Marketing Portfolio",
         "description": "Explore verified digital marketing case studies, certificates, and reviews by Haider Ali.",
         "publisher": {
-          "@id": "https://mhmarketing.com/#organization"
+          "@id": "https://mhmarketing.vercel.app/#organization"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://mhmarketing.com/#faq",
+        "@id": "https://mhmarketing.vercel.app/#faq",
         "mainEntity": [
           {
             "@type": "Question",

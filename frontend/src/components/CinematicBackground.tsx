@@ -26,7 +26,7 @@ export const CinematicBackground: React.FC = () => {
           fill
           priority
           sizes="100vw"
-          quality={92}
+          quality={80}
           className="object-cover object-center"
         />
       </div>
@@ -35,11 +35,11 @@ export const CinematicBackground: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#020612]/75 via-[#020612]/35 to-[#020612]/85 mix-blend-multiply" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,transparent_30%,rgba(2,6,18,0.75)_95%)]" />
 
-      {/* 04: Dynamic Ambient Glow Flares (Dark Blue & Specular Gold Pulses) */}
-      <div className="absolute -top-[12%] left-1/4 w-[750px] h-[750px] rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.22)_0%,rgba(14,35,84,0.08)_45%,transparent_70%)] blur-[100px] animate-ambient-glow" />
-      <div className="absolute top-[35%] -right-[8%] w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.14)_0%,rgba(154,111,20,0.04)_45%,transparent_70%)] blur-[95px] animate-ambient-glow" />
-      <div className="absolute top-[70%] -left-[8%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.18)_0%,rgba(2,6,18,0)_70%)] blur-[110px]" />
-      <div className="absolute -bottom-[8%] right-1/4 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,rgba(2,6,18,0)_70%)] blur-[120px]" />
+      {/* 04: Dynamic Ambient Glow Flares (Responsive for Mobile Battery & GPU) */}
+      <div className="absolute -top-[12%] left-1/4 w-[360px] sm:w-[750px] h-[360px] sm:h-[750px] rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.20)_0%,transparent_70%)] blur-[50px] sm:blur-[100px]" />
+      <div className="absolute top-[35%] -right-[8%] w-[320px] sm:w-[650px] h-[320px] sm:h-[650px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,transparent_70%)] blur-[45px] sm:blur-[95px]" />
+      <div className="hidden sm:block absolute top-[70%] -left-[8%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.18)_0%,transparent_70%)] blur-[110px]" />
+      <div className="hidden sm:block absolute -bottom-[8%] right-1/4 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,transparent_70%)] blur-[120px]" />
 
       {/* 05: Subtle Gold Particle Shimmer (Hydration-safe client render) */}
       {mounted && (

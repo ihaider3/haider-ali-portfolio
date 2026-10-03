@@ -63,6 +63,28 @@
     background: rgba(212, 175, 55, 0.4);
     color: #FFFFFF;
   }
+
+  /* Mobile Performance & Touch Optimizations */
+  a, button, input, textarea, select {
+    touch-action: manipulation;
+  }
+
+  @media (max-width: 640px) {
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  /* Core Web Vitals Turbo: defer layout & paint of offscreen sections */
+  #about,
+  #services,
+  #projects,
+  #certificates,
+  #reviews,
+  #contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+  }
 }
 
 /* Metallic Gold Typography Utilities (Specular Mirror Finish) */

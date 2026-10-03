@@ -292,16 +292,38 @@ export const HeroSection: React.FC = () => {
       });
     };
 
+    let isVisible = true;
+    const handleVisibility = () => {
+      isVisible = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    let isHeroInView = true;
+    const heroEl = document.getElementById("hero");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isHeroInView = entry ? entry.isIntersecting : true;
+      },
+      { threshold: 0.05 }
+    );
+    if (heroEl) observer.observe(heroEl);
+
     const animate = () => {
-      // Smooth continuous auto-rotation (slows down slightly on hover for easy clicking)
-      const speed = isHoveredRef.current ? 0.03 : 0.2;
-      angleRef.current = (angleRef.current + speed) % 360;
-      updatePositions();
+      if (isVisible && isHeroInView) {
+        // Smooth continuous auto-rotation (slows down slightly on hover for easy clicking)
+        const speed = isHoveredRef.current ? 0.03 : 0.2;
+        angleRef.current = (angleRef.current + speed) % 360;
+        updatePositions();
+      }
       animId = requestAnimationFrame(animate);
     };
 
     animId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animId);
+    return () => {
+      cancelAnimationFrame(animId);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      if (heroEl) observer.unobserve(heroEl);
+    };
   }, [radii]);
 
   return (

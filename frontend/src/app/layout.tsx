@@ -17,9 +17,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const viewport: Viewport = {
   themeColor: "#020612",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5
+  maximumScale: 5,
+  viewportFit: "cover"
 };
 
 export const metadata: Metadata = {
@@ -45,9 +47,11 @@ export const metadata: Metadata = {
     "Digital Marketing Consultant UAE",
     "E-commerce Growth Marketing",
     "Paid Ads ROI Specialist",
-    "Digital Growth Consultant"
+    "Digital Growth Consultant",
+    "Meta Pixel CAPI Expert",
+    "Performance Marketing Specialist"
   ],
-  authors: [{ name: "Haider Ali", url: "https://mhmarketing.com" }],
+  authors: [{ name: "Haider Ali", url: "https://mhmarketing.vercel.app" }],
   creator: "Haider Ali",
   publisher: "MH Marketing",
   applicationName: "MH Marketing Portfolio",
@@ -58,9 +62,13 @@ export const metadata: Metadata = {
     address: false,
     telephone: false
   },
-  metadataBase: new URL("https://mhmarketing.com"),
+  metadataBase: new URL("https://mhmarketing.vercel.app"),
   alternates: {
-    canonical: "/"
+    canonical: "https://mhmarketing.vercel.app",
+    languages: {
+      "en-US": "https://mhmarketing.vercel.app",
+      "ur-PK": "https://mhmarketing.vercel.app"
+    }
   },
   robots: {
     index: true,
@@ -78,8 +86,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Haider Ali | Digital Marketing Expert | MH Marketing",
     description:
-      "Turning online attention into measurable business growth. Verified campaigns across Pakistan, UK, USA, UAE & Saudi Arabia.",
-    url: "https://mhmarketing.com",
+      "Turning online attention into measurable business growth. Meta Ads, Google Ads, SEO, and High-ROI Lead Generation across Pakistan, UK, USA, UAE & Saudi Arabia.",
+    url: "https://mhmarketing.vercel.app",
     siteName: "MH Marketing",
     locale: "en_US",
     type: "website",
@@ -96,7 +104,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Haider Ali | Digital Marketing Expert | MH Marketing",
     description:
-      "Turning online attention into measurable business growth. Verified campaigns across Pakistan, UK, USA, UAE & Saudi Arabia.",
+      "Turning online attention into measurable business growth. Meta Ads, Google Ads, SEO, and High-ROI Lead Generation across Pakistan, UK, USA, UAE & Saudi Arabia.",
     images: ["/images/portfolio-bg.png"],
     creator: "@mhmarketingglobal"
   },
