@@ -87,17 +87,17 @@
   }
 }
 
-/* Metallic Gold Typography Utilities - Professional Balanced Luxury Finish */
+/* Professional Balanced Metallic Gold Typography (True Studio Gold Luster) */
 .metallic-gold-text,
 .gold-metallic-text,
 .metallic-gold {
   background: linear-gradient(
     180deg,
-    #FCEAB3 0%,
-    #F5D172 25%,
-    #E5B744 52%,
-    #BF8B23 80%,
-    #DDAE3B 100%
+    #FFF2BF 0%,
+    #F7D576 25%,
+    #DFB143 50%,
+    #B58424 75%,
+    #D4A232 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -106,17 +106,18 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 8px rgba(212, 175, 55, 0.25));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
 }
 
 .metallic-gold-heading {
   background: linear-gradient(
     180deg,
-    #FDECB8 0%,
-    #F7D475 22%,
-    #E8BB48 48%,
-    #C49026 78%,
-    #DFB13D 100%
+    #FFF0B8 0%,
+    #FAD97A 22%,
+    #E2B344 48%,
+    #B38222 72%,
+    #D9A736 92%,
+    #C49226 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -125,16 +126,16 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 10px rgba(212, 175, 55, 0.28));
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.35));
 }
 
 .metallic-gold-subtle {
   background: linear-gradient(
     180deg,
-    #FCEAB3 0%,
-    #F5D172 35%,
-    #D8A535 70%,
-    #E8BA45 100%
+    #FFF4CC 0%,
+    #F3CD6E 30%,
+    #D4A638 65%,
+    #A87920 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -143,7 +144,7 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 6px rgba(212, 175, 55, 0.2));
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.65));
 }
 
 /* Metallic Gold Borders & Frames */
