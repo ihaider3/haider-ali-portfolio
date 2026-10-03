@@ -94,10 +94,16 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/portfolio-bg.png",
+        url: "https://mhmarketing.vercel.app/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "MH Marketing — Haider Ali Digital Marketing Expert Portfolio"
+        alt: "MH Marketing — Haider Ali Digital Marketing Expert Official Logo"
+      },
+      {
+        url: "https://mhmarketing.vercel.app/images/logo/mh-marketing-512.png",
+        width: 512,
+        height: 512,
+        alt: "MH Marketing Official Logo"
       }
     ]
   },
@@ -106,7 +112,7 @@ export const metadata: Metadata = {
     title: "Haider Ali | Digital Marketing Expert | MH Marketing",
     description:
       "Turning online attention into measurable business growth. Meta Ads, Google Ads, SEO, and High-ROI Lead Generation across Pakistan, UK, USA, UAE & Saudi Arabia.",
-    images: ["/images/portfolio-bg.png"],
+    images: ["https://mhmarketing.vercel.app/images/og-image.png"],
     creator: "@mhmarketingglobal"
   },
   icons: {
