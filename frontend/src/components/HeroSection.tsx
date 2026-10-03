@@ -521,7 +521,7 @@ export const HeroSection: React.FC = () => {
                   <div className="absolute bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-4 p-3 sm:p-3.5 rounded-2xl bg-gradient-to-b from-[#06122F]/92 via-[#040C22]/96 to-[#020614]/98 backdrop-blur-xl border border-[#F3CF7A]/60 shadow-[0_12px_35px_rgba(0,0,0,0.9),0_0_25px_rgba(212,175,55,0.35)] text-center transition-all duration-300 group-hover/card:border-[#FFF4C2] group-hover/card:shadow-[0_16px_45px_rgba(0,0,0,0.95),0_0_40px_rgba(212,175,55,0.55)] z-20">
                     {/* Line 1: HAIDER ALI + Authentic Blue Verified Badge */}
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-lg sm:text-2xl font-black tracking-wider bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(212,175,55,0.7)] uppercase">
+                      <span className="text-lg sm:text-2xl font-black tracking-wider metallic-gold-heading uppercase">
                         HAIDER ALI
                       </span>
                       <AuthenticVerifiedBadge size={22} />
@@ -533,7 +533,7 @@ export const HeroSection: React.FC = () => {
                     </p>
 
                     {/* Line 3: FOUNDER • MH MARKETING (Exact Picture 2 addition) */}
-                    <p className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#F3CF7A]/90 uppercase mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] font-bold tracking-widest metallic-gold-subtle uppercase mt-0.5">
                       FOUNDER • MH MARKETING
                     </p>
                   </div>

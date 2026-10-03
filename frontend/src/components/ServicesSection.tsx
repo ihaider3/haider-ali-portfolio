@@ -368,7 +368,7 @@ export const ServicesSection: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFF4C2] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D4AF37]"></span>
             </span>
-            <span className="text-xs sm:text-sm font-black tracking-[0.25em] bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent uppercase">
+            <span className="text-xs sm:text-sm font-black tracking-[0.25em] metallic-gold-text uppercase">
               SERVICES
             </span>
             <span className="text-white/30">|</span>
@@ -447,12 +447,12 @@ export const ServicesSection: React.FC = () => {
                       </div>
 
                       {/* HIGHLY PROMINENT & HIGHLIGHTED SERVICE TITLE (User-Requested) */}
-                      <h3 className="text-lg sm:text-[1.25rem] font-black tracking-tight leading-snug mb-1.5 bg-gradient-to-r from-white via-[#FFF4C2] to-[#F3CF7A] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(212,175,55,0.45)] group-hover:from-[#FFF4C2] group-hover:to-[#D4AF37] transition-all">
+                      <h3 className="text-lg sm:text-[1.25rem] font-black tracking-tight leading-snug mb-1.5 metallic-gold-heading">
                         {service.title}
                       </h3>
 
                       {/* Highlighted Value Subtitle */}
-                      <p className="text-xs sm:text-[13px] font-bold text-[#F3CF7A] mb-2.5 leading-snug flex items-center gap-1.5">
+                      <p className="text-xs sm:text-[13px] font-bold metallic-gold-subtle mb-2.5 leading-snug flex items-center gap-1.5">
                         <span className="w-1 h-1 rounded-full bg-[#F3CF7A]" />
                         <span>{service.subtitle}</span>
                       </p>

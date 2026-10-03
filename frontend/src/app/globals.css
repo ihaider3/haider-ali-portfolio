@@ -87,19 +87,20 @@
   }
 }
 
-/* Metallic Gold Typography Utilities (Specular Mirror Finish) */
+/* Metallic Gold Typography Utilities (Cinematic Specular Mirror Chrome Finish) */
 .metallic-gold-text,
 .gold-metallic-text,
 .metallic-gold {
   background: linear-gradient(
     135deg,
     #FFFFFF 0%,
-    #FFF8E1 12%,
-    #FCE39E 28%,
-    #D4AF37 48%,
-    #9C7214 68%,
-    #FFF1BF 85%,
-    #C69A2E 100%
+    #FFF7D9 12%,
+    #FCE59F 26%,
+    #E8BA45 42%,
+    #9E6F12 56%,
+    #FFF4C4 70%,
+    #E5BA42 84%,
+    #A07216 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -108,19 +109,20 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.42));
+  filter: drop-shadow(0 2px 14px rgba(212, 175, 55, 0.55));
 }
 
 .metallic-gold-heading {
   background: linear-gradient(
     135deg,
     #FFFFFF 0%,
-    #FFF8E1 12%,
-    #FBE5A3 26%,
-    #D4AF37 46%,
-    #93680F 66%,
-    #FFF0B8 84%,
-    #C6A15B 100%
+    #FFF8DE 10%,
+    #FFE89E 24%,
+    #EBB738 40%,
+    #8F5E0B 54%,
+    #FFF3B8 68%,
+    #EBB738 82%,
+    #A27214 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -129,16 +131,17 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
-  filter: drop-shadow(0 0 26px rgba(212, 175, 55, 0.55));
+  filter: drop-shadow(0 2px 26px rgba(212, 175, 55, 0.65)) drop-shadow(0 0 10px rgba(255, 244, 194, 0.35));
 }
 
 .metallic-gold-subtle {
   background: linear-gradient(
     135deg,
-    #FFF8D6 0%,
-    #F5D67B 30%,
-    #D4AF37 60%,
-    #9A6F14 100%
+    #FFFFFF 0%,
+    #FFF5CE 20%,
+    #F2C960 45%,
+    #A37318 70%,
+    #FFE9A0 100%
   ) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -147,6 +150,7 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   display: inline-block;
+  filter: drop-shadow(0 1px 8px rgba(212, 175, 55, 0.35));
 }
 
 /* Metallic Gold Borders & Frames */

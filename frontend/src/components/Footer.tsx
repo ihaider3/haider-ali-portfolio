@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                 />
               </div>
               <div>
-                <span className="text-white font-extrabold text-xl tracking-wider block">
+                <span className="font-black text-xl tracking-wider block metallic-gold-heading">
                   MH MARKETING
                 </span>
                 <span className="text-xs metallic-gold-text tracking-widest uppercase font-semibold">

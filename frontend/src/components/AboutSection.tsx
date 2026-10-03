@@ -25,7 +25,7 @@ export const AboutSection: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFF4C2] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D4AF37]"></span>
             </span>
-            <span className="text-xs sm:text-sm font-black tracking-[0.2em] bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent uppercase">
+            <span className="text-xs sm:text-sm font-black tracking-[0.2em] metallic-gold-text uppercase">
               ABOUT
             </span>
             <span className="text-white/20">|</span>
@@ -55,11 +55,11 @@ export const AboutSection: React.FC = () => {
             <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#040C22]/75 backdrop-blur-md border border-[#D4AF37]/25 space-y-3.5 shadow-md">
               <p>
                 Over the years, I have managed multiple pages and marketing projects for businesses connected with Pakistan and international markets including the{" "}
-                <strong className="bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent font-bold">
+                <strong className="metallic-gold-text font-bold">
                   UK, USA, Dubai/UAE
                 </strong>{" "}
                 and{" "}
-                <strong className="bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent font-bold">
+                <strong className="metallic-gold-text font-bold">
                   Saudi Arabia
                 </strong>
                 .
@@ -72,7 +72,7 @@ export const AboutSection: React.FC = () => {
 
             {/* Geographic Markets & Campaign Reach with Authentic Flags */}
             <div className="pt-2">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-[#F3CF7A] mb-3 flex items-center gap-2">
+              <h3 className="text-xs font-bold uppercase tracking-widest metallic-gold-text mb-3 flex items-center gap-2">
                 <Globe className="w-4 h-4 text-[#D4AF37]" />
                 <span>Geographic Markets &amp; Campaign Reach</span>
               </h3>
@@ -114,10 +114,10 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">
+                <p className="text-2xl sm:text-3xl font-black metallic-gold-heading">
                   5+ Years
                 </p>
-                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#F0D58A] mt-0.5">
+                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider metallic-gold-subtle mt-0.5">
                   Industry Experience
                 </p>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-1">
@@ -143,10 +143,10 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">
+                <p className="text-2xl sm:text-3xl font-black metallic-gold-heading">
                   Multiple Pages
                 </p>
-                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#F0D58A] mt-0.5">
+                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider metallic-gold-subtle mt-0.5">
                   Actively Managed
                 </p>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-1">
@@ -170,10 +170,10 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">
+                <p className="text-2xl sm:text-3xl font-black metallic-gold-heading">
                   Local + Global
                 </p>
-                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#F0D58A] mt-0.5">
+                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider metallic-gold-subtle mt-0.5">
                   Cross-Border Reach
                 </p>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-1">
@@ -196,10 +196,10 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)]">
+                <p className="text-2xl sm:text-3xl font-black metallic-gold-heading">
                   Multi-Platform
                 </p>
-                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#F0D58A] mt-0.5">
+                <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider metallic-gold-subtle mt-0.5">
                   Coordinated Execution
                 </p>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-1">

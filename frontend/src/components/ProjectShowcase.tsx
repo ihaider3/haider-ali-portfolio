@@ -162,7 +162,7 @@ export const ProjectShowcase: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFF4C2] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D4AF37]"></span>
             </span>
-            <span className="text-xs sm:text-sm font-black tracking-[0.25em] bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent uppercase">
+            <span className="text-xs sm:text-sm font-black tracking-[0.25em] metallic-gold-text uppercase">
               PROJECTS
             </span>
             <span className="text-white/30">|</span>
@@ -278,7 +278,7 @@ export const ProjectShowcase: React.FC = () => {
                         </div>
 
                         {/* Highly Prominent Project Name */}
-                        <h3 className="text-lg sm:text-[1.25rem] font-black tracking-tight leading-snug mb-1.5 bg-gradient-to-r from-white via-[#FFF4C2] to-[#F3CF7A] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(212,175,55,0.45)] group-hover:from-[#FFF4C2] group-hover:to-[#D4AF37] transition-all">
+                        <h3 className="text-lg sm:text-[1.25rem] font-black tracking-tight leading-snug mb-1.5 metallic-gold-heading">
                           {project.title}
                         </h3>
 
@@ -292,7 +292,7 @@ export const ProjectShowcase: React.FC = () => {
                             </div>
                             <span className="font-bold text-white text-[11px]">5.0 Client Rating</span>
                           </div>
-                          <span className="text-[10px] text-[#F3CF7A] font-bold bg-[#D4AF37]/15 px-2 py-0.5 rounded-md border border-[#D4AF37]/30">
+                          <span className="text-[10px] metallic-gold-subtle font-bold bg-[#D4AF37]/15 px-2 py-0.5 rounded-md border border-[#D4AF37]/30">
                             Verified Result
                           </span>
                         </div>

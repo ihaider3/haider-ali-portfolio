@@ -45,7 +45,7 @@ export const CertificatesSection: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFF4C2] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D4AF37]"></span>
             </span>
-            <span className="text-xs sm:text-sm font-black tracking-[0.2em] bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent uppercase">
+            <span className="text-xs sm:text-sm font-black tracking-[0.2em] metallic-gold-text uppercase">
               CERTIFICATES
             </span>
             <span className="text-white/20">|</span>
@@ -231,7 +231,7 @@ const LargeCertificateCard: React.FC<CertCardProps> = ({ cert, onOpen }) => {
             </div>
 
             {cert.credentialId && (
-              <div className="flex items-center gap-2 font-mono text-[#F3CF7A] truncate">
+              <div className="flex items-center gap-2 font-mono metallic-gold-text truncate">
                 <Hash className="w-4 h-4 text-[#D4AF37] shrink-0" />
                 <span className="truncate">ID: {cert.credentialId}</span>
               </div>
@@ -348,7 +348,7 @@ const MediumCertificateCard: React.FC<CertCardProps> = ({ cert, onOpen }) => {
           </div>
 
           {cert.credentialId && (
-            <div className="flex items-center gap-1.5 font-mono text-[11px] text-[#F3CF7A] truncate">
+            <div className="flex items-center gap-1.5 font-mono text-[11px] metallic-gold-text truncate">
               <Hash className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
               <span className="truncate">ID: {cert.credentialId}</span>
             </div>

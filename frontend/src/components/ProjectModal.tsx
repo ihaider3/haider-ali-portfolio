@@ -85,7 +85,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </span>
             </div>
 
-            <h3 id="modal-project-title" className="text-xl sm:text-2xl font-extrabold text-white">
+            <h3 id="modal-project-title" className="text-xl sm:text-2xl font-black metallic-gold-heading">
               {project.title}
             </h3>
 
@@ -96,7 +96,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 ))}
               </div>
               <span className="text-xs font-bold text-white">5.0 Star Client Rating</span>
-              <span className="text-[10px] text-[#F3CF7A] font-semibold bg-[#D4AF37]/15 px-2 py-0.5 rounded-full border border-[#D4AF37]/30">
+              <span className="text-[10px] metallic-gold-subtle font-bold bg-[#D4AF37]/15 px-2 py-0.5 rounded-full border border-[#D4AF37]/30">
                 Verified Campaign
               </span>
             </div>
@@ -167,7 +167,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Source Notice */}
           <div className="text-[11px] text-slate-400 bg-[#03091A] p-3 rounded-lg border border-white/5">
-            <span className="text-[#D4AF37] font-semibold">Source Status:</span> Real client page showcase. Managed by Haider Ali (MH Marketing).
+            <span className="metallic-gold-text font-bold">Source Status:</span> Real client page showcase. Managed by Haider Ali (MH Marketing).
           </div>
         </div>
 

@@ -293,9 +293,9 @@ export const ReviewsSection: React.FC = () => {
           <button
             type="button"
             onClick={() => setShowAllModal(true)}
-            className="text-xs font-bold text-[#F3CF7A] hover:text-[#FFF4C2] flex items-center gap-1.5 transition-colors cursor-pointer py-1 px-2.5 rounded-lg bg-white/5 border border-[#D4AF37]/25 hover:border-[#D4AF37]/50"
+            className="text-xs font-bold metallic-gold-text flex items-center gap-1.5 transition-colors cursor-pointer py-1 px-2.5 rounded-lg bg-white/5 border border-[#D4AF37]/35 hover:border-[#D4AF37]/70"
           >
-            <SlidersHorizontal className="w-3.5 h-3.5" />
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>Browse All {REVIEWS_LIST.length} Reviews</span>
           </button>
         </ScrollReveal>
@@ -367,9 +367,9 @@ export const ReviewsSection: React.FC = () => {
                       </div>
 
                       {/* Verified Client Badge matching reference */}
-                      <div className="flex items-center gap-1.5 text-[11px] text-[#FFF4C2] bg-[#03091B] px-2.5 py-1 rounded-full border border-[#D4AF37]/30 shadow-sm shrink-0">
+                      <div className="flex items-center gap-1.5 text-[11px] metallic-gold-subtle font-bold bg-[#03091B] px-2.5 py-1 rounded-full border border-[#D4AF37]/30 shadow-sm shrink-0">
                         <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="font-semibold">Verified Client</span>
+                        <span>Verified Client</span>
                       </div>
                     </div>
                   </div>

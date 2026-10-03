@@ -65,7 +65,7 @@ export const CertificateLightbox: React.FC<CertificateLightboxProps> = ({
             <span className="text-xs font-mono font-bold metallic-gold-text uppercase tracking-wider block">
               {certificate.category}
             </span>
-            <h3 id="certificate-lightbox-title" className="text-lg sm:text-xl font-bold text-white">
+            <h3 id="certificate-lightbox-title" className="text-lg sm:text-xl font-black metallic-gold-heading">
               {certificate.title}
             </h3>
           </div>
@@ -146,7 +146,7 @@ export const CertificateLightbox: React.FC<CertificateLightboxProps> = ({
                 <span>Date: {certificate.issueDate}</span>
               </span>
               {certificate.credentialId && (
-                <span className="flex items-center gap-1.5 font-mono text-[#F3CF7A]">
+                <span className="flex items-center gap-1.5 font-mono metallic-gold-text">
                   <Hash className="w-3.5 h-3.5 text-[#D4AF37]" />
                   <span>ID: {certificate.credentialId}</span>
                 </span>

@@ -117,10 +117,10 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
               <Sparkles className="w-3.5 h-3.5 text-[#F3CF7A]" />
               <span>{service.categoryTag}</span>
             </div>
-            <h2 id="modal-title" className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-white via-[#FFF4C2] to-[#F3CF7A] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(212,175,55,0.5)] leading-tight">
+            <h2 id="modal-title" className="text-xl sm:text-2xl md:text-3xl font-black metallic-gold-heading leading-tight">
               {service.title}
             </h2>
-            <p className="text-xs sm:text-sm font-bold text-[#F3CF7A] mt-0.5">
+            <p className="text-xs sm:text-sm font-bold metallic-gold-subtle mt-0.5">
               {service.subtitle}
             </p>
           </div>
@@ -162,8 +162,8 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
           {/* Key Deliverables Checklist */}
           <div>
-            <h3 className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#F3CF7A] flex items-center gap-2 mb-2">
-              <ShieldCheck className="w-4 h-4 text-[#F3CF7A]" />
+            <h3 className="text-xs sm:text-sm font-black uppercase tracking-wider metallic-gold-text flex items-center gap-2 mb-2">
+              <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
               <span>What is Included (Deliverables Checklist)</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

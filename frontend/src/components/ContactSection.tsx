@@ -185,7 +185,7 @@ export const ContactSection: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFF4C2] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D4AF37]"></span>
             </span>
-            <span className="text-xs sm:text-sm font-black tracking-[0.2em] bg-gradient-to-r from-[#FFF4C2] via-[#F3CF7A] to-[#D4AF37] bg-clip-text text-transparent uppercase">
+            <span className="text-xs sm:text-sm font-black tracking-[0.2em] metallic-gold-text uppercase">
               CONTACT
             </span>
             <span className="text-white/20">|</span>
@@ -215,7 +215,7 @@ export const ContactSection: React.FC = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
                 Find MH Marketing Across The Web (Direct Connect)
               </span>
-              <span className="text-[10px] text-[#F3CF7A] font-semibold">
+              <span className="text-[10px] metallic-gold-text font-semibold">
                 Instant Social Access
               </span>
             </div>
