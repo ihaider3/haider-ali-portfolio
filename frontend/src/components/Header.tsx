@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 15);
 
       const sections = ["hero", "about", "services", "projects", "certificates", "reviews", "contact"];
       let currentActive = "hero";
@@ -51,8 +51,8 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#020614]/80 backdrop-blur-2xl backdrop-saturate-150 border-b border-[#D4AF37]/35 shadow-[0_12px_40px_rgba(0,0,0,0.85),0_0_20px_rgba(212,175,55,0.18)] py-2 sm:py-2.5"
-          : "bg-transparent border-b border-transparent shadow-none py-3.5 sm:py-4"
+          ? "bg-[#020614]/94 backdrop-blur-xl border-b border-[#D4AF37]/30 shadow-[0_8px_30px_rgba(2,6,18,0.85)] py-2 sm:py-2.5"
+          : "bg-[#020612]/60 backdrop-blur-md border-b border-[#D4AF37]/15 py-3 sm:py-3.5"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-14">
@@ -80,13 +80,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Navigation in Center (Desktop) */}
-          <nav
-            className={`hidden lg:flex items-center space-x-1 xl:space-x-1.5 px-3.5 py-1 rounded-full border transition-all duration-300 ${
-              isScrolled
-                ? "bg-[#040C22]/80 backdrop-blur-xl border-[#D4AF37]/35 shadow-[0_4px_20px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.12)]"
-                : "bg-[#050D24]/70 backdrop-blur-md border-[#D4AF37]/20 shadow-md"
-            }`}
-          >
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5 bg-[#050D24]/85 backdrop-blur-xl px-3.5 py-1 rounded-full border border-[#D4AF37]/25 shadow-md">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
