@@ -94,16 +94,20 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://mhmarketing.vercel.app/images/og-image.png",
+        url: "https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5",
+        secureUrl: "https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5",
         width: 1200,
         height: 630,
-        alt: "MH Marketing — Haider Ali Digital Marketing Expert Official Logo"
+        alt: "MH Marketing — Haider Ali Digital Marketing Expert Official Logo",
+        type: "image/png"
       },
       {
-        url: "https://mhmarketing.vercel.app/images/logo/mh-marketing-512.png",
-        width: 512,
-        height: 512,
-        alt: "MH Marketing Official Logo"
+        url: "https://mhmarketing.vercel.app/images/logo/og-logo-square.png?v=logo-v5",
+        secureUrl: "https://mhmarketing.vercel.app/images/logo/og-logo-square.png?v=logo-v5",
+        width: 800,
+        height: 800,
+        alt: "MH Marketing Official Logo",
+        type: "image/png"
       }
     ]
   },
@@ -112,7 +116,7 @@ export const metadata: Metadata = {
     title: "Haider Ali | Digital Marketing Expert | MH Marketing",
     description:
       "Turning online attention into measurable business growth. Meta Ads, Google Ads, SEO, and High-ROI Lead Generation across Pakistan, UK, USA, UAE & Saudi Arabia.",
-    images: ["https://mhmarketing.vercel.app/images/og-image.png"],
+    images: ["https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5"],
     creator: "@mhmarketingglobal"
   },
   icons: {
@@ -141,6 +145,12 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} scroll-smooth dark`}>
       <head>
         <StructuredData />
+        <meta property="og:image" content="https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5" />
+        <meta property="og:image:secure_url" content="https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <link rel="image_src" href="https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5" />
         <link rel="icon" href="/images/logo/mh-marketing-32.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/logo/mh-marketing-192.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

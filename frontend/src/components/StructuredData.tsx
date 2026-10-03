@@ -51,7 +51,7 @@ export const StructuredData: React.FC = () => {
         "name": OWNER_INFO.brandName,
         "url": "https://mhmarketing.vercel.app",
         "logo": "https://mhmarketing.vercel.app/images/logo/mh-marketing.png",
-        "image": "https://mhmarketing.vercel.app/images/og-image.png",
+        "image": "https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5",
         "description": "High-impact digital marketing services helping businesses scale across Pakistan, UK, USA, UAE, and Saudi Arabia.",
         "telephone": OWNER_INFO.phoneClean,
         "email": OWNER_INFO.email,
