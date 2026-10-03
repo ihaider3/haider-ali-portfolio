@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Volume2, VolumeX, FastForward } from "lucide-react";
 
 export const LogoAnimationIntro: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isFading, setIsFading] = useState(false);
+  const [stage, setStage] = useState<"logo" | "video">("logo");
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -21,20 +23,29 @@ export const LogoAnimationIntro: React.FC = () => {
   };
 
   useEffect(() => {
-    // Lock scroll while intro video is playing
+    // Lock scroll while intro is active
     document.body.style.overflow = "hidden";
+
+    // Phase 1: Show transparent circular logo badge for 0.7 seconds (0.5s - 1s as requested)
+    const stageTimer = setTimeout(() => {
+      setStage("video");
+      const video = videoRef.current;
+      if (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      }
+    }, 700);
 
     const video = videoRef.current;
     if (video) {
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay fallback for strict browser policies
-        });
-      }
 
       const handleTimeUpdate = () => {
         if (video.duration) {
@@ -50,16 +61,18 @@ export const LogoAnimationIntro: React.FC = () => {
 
       return () => {
         video.removeEventListener("timeupdate", handleTimeUpdate);
+        clearTimeout(stageTimer);
       };
     }
 
-    // Safety timeout: video is ~2.6s, complete after 2.8s max
-    const timer = setTimeout(() => {
+    // Safety fallback: complete after 3.8s total
+    const fallbackTimer = setTimeout(() => {
       handleComplete();
-    }, 2800);
+    }, 3800);
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(stageTimer);
+      clearTimeout(fallbackTimer);
       document.body.style.overflow = "";
     };
   }, []);
@@ -116,8 +129,45 @@ export const LogoAnimationIntro: React.FC = () => {
         </button>
       </div>
 
-      {/* Main Video Presentation: Perfectly Sized Vertical Device/Mobile Frame (Zero Logo Cropping) */}
-      <div className="relative flex flex-col items-center justify-center px-4 max-w-full">
+      {/* STAGE 1: 0.7s Transparent Circular Logo Reveal (Zero Black Corners, 100% Transparent Alpha) */}
+      <div
+        className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 ease-out ${
+          stage === "logo" ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+        }`}
+      >
+        <div className="relative flex flex-col items-center justify-center px-4">
+          {/* Specular golden ambient pulse */}
+          <div className="absolute w-52 h-52 sm:w-64 sm:h-64 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.35)_0%,rgba(30,64,175,0.2)_50%,transparent_75%)] blur-2xl animate-pulse" />
+          
+          {/* Transparent Logo Medallion */}
+          <div className="relative w-40 h-40 sm:w-52 sm:h-52 drop-shadow-[0_0_35px_rgba(212,175,55,0.55)]">
+            <Image
+              src="/images/logo/mh-marketing.png"
+              alt="MH Marketing Official Logo"
+              width={208}
+              height={208}
+              priority
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="mt-4 flex flex-col items-center gap-1 text-center">
+            <span className="text-xs sm:text-sm font-black metallic-gold-text tracking-widest uppercase">
+              MH MARKETING
+            </span>
+            <span className="text-[10px] sm:text-xs text-slate-400 font-medium tracking-wider">
+              Your Trusted Digital Partner
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* STAGE 2: Main Video Presentation: Perfectly Sized Vertical Device/Mobile Frame (Zero Logo Cropping) */}
+      <div
+        className={`relative flex flex-col items-center justify-center px-4 max-w-full transition-all duration-500 ease-out ${
+          stage === "video" ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+        }`}
+      >
         {/* Specular Ambient Glow Frame Styled Like Natural Smartphone / Vertical Showcase */}
         <div className="relative h-[66vh] sm:h-[72vh] max-h-[540px] sm:max-h-[620px] aspect-[9/16] rounded-[2rem] sm:rounded-[2.5rem] p-1.5 sm:p-2 bg-gradient-to-b from-[#D4AF37]/50 via-[#050D24] to-[#D4AF37]/35 border-2 border-[#D4AF37]/60 shadow-[0_25px_80px_rgba(0,0,0,0.95),0_0_50px_rgba(212,175,55,0.35)]">
           {/* Inner Display Screen */}
@@ -126,8 +176,6 @@ export const LogoAnimationIntro: React.FC = () => {
               ref={videoRef}
               src="/videos/logo-animation.mp4"
               poster="/videos/logo-poster.jpg"
-              autoPlay
-              muted
               playsInline
               preload="auto"
               onEnded={handleComplete}

@@ -44,11 +44,11 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3.5">
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37]/50 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
                 <Image
-                  src="/images/logo/mh-marketing.jpg"
+                  src="/images/logo/mh-marketing.png"
                   alt="MH Marketing Official Logo"
                   fill
                   sizes="56px"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div>

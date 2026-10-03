@@ -64,12 +64,12 @@ export const Header: React.FC = () => {
           >
             <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-[#D4AF37]/50 shadow-[0_0_15px_rgba(212,175,55,0.25)] group-hover:border-[#FFF4C2] transition-all duration-300">
               <Image
-                src="/images/logo/mh-marketing.jpg"
+                src="/images/logo/mh-marketing.png"
                 alt="MH Marketing Official Logo"
                 fill
                 sizes="44px"
                 priority
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="flex flex-col">

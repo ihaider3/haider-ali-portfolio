@@ -111,12 +111,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/logo/mh-marketing.jpg", sizes: "32x32", type: "image/jpeg" },
-      { url: "/images/logo/mh-marketing.jpg", sizes: "192x192", type: "image/jpeg" },
-      { url: "/favicon.ico", sizes: "any" }
+      { url: "/images/logo/mh-marketing-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/logo/mh-marketing-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/logo/mh-marketing-512.png", sizes: "512x512", type: "image/png" }
     ],
-    shortcut: "/images/logo/mh-marketing.jpg",
-    apple: "/images/logo/mh-marketing.jpg"
+    shortcut: "/images/logo/mh-marketing-192.png",
+    apple: "/images/logo/mh-marketing-192.png"
   },
   other: {
     "geo.region": "PK-IS",
@@ -135,8 +135,8 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} scroll-smooth dark`}>
       <head>
         <StructuredData />
-        <link rel="icon" href="/images/logo/mh-marketing.jpg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/images/logo/mh-marketing.jpg" />
+        <link rel="icon" href="/images/logo/mh-marketing-32.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/logo/mh-marketing-192.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
