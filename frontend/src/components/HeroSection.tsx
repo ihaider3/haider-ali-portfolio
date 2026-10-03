@@ -663,7 +663,7 @@ export const HeroSection: React.FC = () => {
         >
           <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 p-3 sm:p-5 rounded-2xl sm:rounded-3xl bg-[#040C22]/85 backdrop-blur-xl border border-[#D4AF37]/30 shadow-[0_12px_40px_rgba(2,6,18,0.7),inset_0_0_20px_rgba(212,175,55,0.06)]">
             {/* Box 1: 5+ Years Experience */}
-            <div className="flex flex-col items-center sm:items-start justify-center p-3.5 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group">
+            <div className="flex flex-col items-center sm:items-start justify-center p-3 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group min-h-[108px]">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-black metallic-gold-text tracking-tight group-hover:scale-105 transition-transform origin-left">
                 5+
               </span>
@@ -673,7 +673,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Box 2: Multiple Managed Pages & Projects */}
-            <div className="flex flex-col items-center sm:items-start justify-center p-3.5 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group">
+            <div className="flex flex-col items-center sm:items-start justify-center p-3 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group min-h-[108px]">
               <span className="text-xl sm:text-2xl lg:text-3xl font-black metallic-gold-text tracking-tight group-hover:scale-105 transition-transform origin-left">
                 Multiple
               </span>
@@ -682,66 +682,118 @@ export const HeroSection: React.FC = () => {
               </span>
             </div>
 
-            {/* Box 3: International Markets (Flag Icons & Tooltips) */}
-            <div className="flex flex-col items-center sm:items-start justify-center p-3.5 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group">
-              <span className="text-xs sm:text-sm font-bold text-white tracking-wide uppercase mb-2">
+            {/* Box 3: International Markets (Flag Icons in 2 clean lines on mobile, 1 line on desktop) */}
+            <div className="flex flex-col items-center sm:items-start justify-center p-3 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group min-h-[108px]">
+              <span className="text-[11px] sm:text-xs font-bold text-white tracking-wide uppercase mb-2 text-center sm:text-left">
                 International Markets
               </span>
-              <div className="flex items-center gap-2 sm:gap-2.5">
-                {[
-                  { code: "PK" as const, name: "Pakistan" },
-                  { code: "GB" as const, name: "United Kingdom" },
-                  { code: "US" as const, name: "United States" },
-                  { code: "AE" as const, name: "United Arab Emirates" },
-                  { code: "SA" as const, name: "Saudi Arabia" },
-                ].map((market) => (
-                  <div
-                    key={market.code}
-                    className="relative group/flag cursor-pointer"
-                    onMouseEnter={() => setActiveFlagTooltip(market.name)}
-                    onMouseLeave={() => setActiveFlagTooltip(null)}
-                  >
-                    <div className="transition-transform group-hover/flag:scale-125 group-hover/flag:-translate-y-1 duration-200 shadow-sm">
-                      <CountryFlag code={market.code} name={market.name} size={18} />
-                    </div>
-                    {activeFlagTooltip === market.name && (
-                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-[#020614] border border-[#D4AF37]/50 text-[10px] font-bold text-[#FFF4C2] whitespace-nowrap z-30 shadow-xl pointer-events-none backdrop-blur-md">
-                        {market.name}
+              <div className="flex flex-col items-center sm:items-start gap-1.5 sm:flex-row sm:gap-2.5">
+                {/* Line 1 (3 flags): Pakistan, UK, USA */}
+                <div className="flex items-center justify-center gap-2">
+                  {[
+                    { code: "PK" as const, name: "Pakistan" },
+                    { code: "GB" as const, name: "United Kingdom" },
+                    { code: "US" as const, name: "United States" },
+                  ].map((market) => (
+                    <div
+                      key={market.code}
+                      className="relative group/flag cursor-pointer"
+                      onMouseEnter={() => setActiveFlagTooltip(market.name)}
+                      onMouseLeave={() => setActiveFlagTooltip(null)}
+                    >
+                      <div className="transition-transform group-hover/flag:scale-125 group-hover/flag:-translate-y-1 duration-200 shadow-sm">
+                        <CountryFlag code={market.code} name={market.name} size={18} />
                       </div>
-                    )}
-                  </div>
-                ))}
+                      {activeFlagTooltip === market.name && (
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-[#020614] border border-[#D4AF37]/50 text-[10px] font-bold text-[#FFF4C2] whitespace-nowrap z-30 shadow-xl pointer-events-none backdrop-blur-md">
+                          {market.name}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {/* Line 2 (2 flags): UAE, Saudi Arabia */}
+                <div className="flex items-center justify-center gap-2">
+                  {[
+                    { code: "AE" as const, name: "United Arab Emirates" },
+                    { code: "SA" as const, name: "Saudi Arabia" },
+                  ].map((market) => (
+                    <div
+                      key={market.code}
+                      className="relative group/flag cursor-pointer"
+                      onMouseEnter={() => setActiveFlagTooltip(market.name)}
+                      onMouseLeave={() => setActiveFlagTooltip(null)}
+                    >
+                      <div className="transition-transform group-hover/flag:scale-125 group-hover/flag:-translate-y-1 duration-200 shadow-sm">
+                        <CountryFlag code={market.code} name={market.name} size={18} />
+                      </div>
+                      {activeFlagTooltip === market.name && (
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-[#020614] border border-[#D4AF37]/50 text-[10px] font-bold text-[#FFF4C2] whitespace-nowrap z-30 shadow-xl pointer-events-none backdrop-blur-md">
+                          {market.name}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Box 4: Multiple Platforms (with Direct Clickable Social Media Links) */}
-            <div className="flex flex-col items-center sm:items-start justify-center p-3.5 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group">
-              <span className="text-xs sm:text-sm font-bold text-white tracking-wide uppercase mb-2">
+            {/* Box 4: Multiple Platforms (2 clean lines of 3 icons on mobile, 1 line on desktop) */}
+            <div className="flex flex-col items-center sm:items-start justify-center p-3 sm:p-4 rounded-xl bg-[#06122D]/60 border border-[#D4AF37]/15 hover:border-[#D4AF37]/40 transition-all duration-300 group min-h-[108px]">
+              <span className="text-[11px] sm:text-xs font-bold text-white tracking-wide uppercase mb-2 text-center sm:text-left">
                 Multiple Platforms
               </span>
-              <div className="flex items-center gap-2 sm:gap-2.5">
-                {STAT_PLATFORMS.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.href}
-                    target={platform.href.startsWith("http") ? "_blank" : undefined}
-                    rel={platform.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="relative group/platform cursor-pointer block"
-                    onMouseEnter={() => setActivePlatformTooltip(platform.label)}
-                    onMouseLeave={() => setActivePlatformTooltip(null)}
-                    aria-label={`Open ${platform.label} (${OWNER_INFO.name})`}
-                  >
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#050D24] border border-[#D4AF37]/40 group-hover/platform:border-[#FFF4C2] group-hover/platform:scale-125 group-hover/platform:-translate-y-1 transition-all duration-200 flex items-center justify-center p-1 shadow-sm">
-                      <BrandIcon name={platform.name} size={14} mode="authentic" />
-                    </div>
-                    {activePlatformTooltip === platform.label && (
-                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-[#020614] border border-[#D4AF37]/50 text-[10px] font-bold text-[#FFF4C2] whitespace-nowrap z-30 shadow-xl pointer-events-none backdrop-blur-md flex items-center gap-1">
-                        <span>{platform.label}</span>
-                        <span className="text-[#38BDF8]">↗</span>
+              <div className="flex flex-col items-center sm:items-start gap-1.5 sm:flex-row sm:gap-2">
+                {/* Line 1 (3 icons): Facebook, Instagram, TikTok */}
+                <div className="flex items-center justify-center gap-2 sm:gap-2.5">
+                  {STAT_PLATFORMS.slice(0, 3).map((platform) => (
+                    <a
+                      key={platform.name}
+                      href={platform.href}
+                      target={platform.href.startsWith("http") ? "_blank" : undefined}
+                      rel={platform.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="relative group/platform cursor-pointer block"
+                      onMouseEnter={() => setActivePlatformTooltip(platform.label)}
+                      onMouseLeave={() => setActivePlatformTooltip(null)}
+                      aria-label={`Open ${platform.label} (${OWNER_INFO.name})`}
+                    >
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#050D24] border border-[#D4AF37]/40 group-hover/platform:border-[#FFF4C2] group-hover/platform:scale-125 group-hover/platform:-translate-y-1 transition-all duration-200 flex items-center justify-center p-1 shadow-sm">
+                        <BrandIcon name={platform.name} size={14} mode="authentic" />
                       </div>
-                    )}
-                  </a>
-                ))}
+                      {activePlatformTooltip === platform.label && (
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-[#020614] border border-[#D4AF37]/50 text-[10px] font-bold text-[#FFF4C2] whitespace-nowrap z-30 shadow-xl pointer-events-none backdrop-blur-md flex items-center gap-1">
+                          <span>{platform.label}</span>
+                          <span className="text-[#38BDF8]">↗</span>
+                        </div>
+                      )}
+                    </a>
+                  ))}
+                </div>
+                {/* Line 2 (3 icons): Meta Ads, Google Ads, YouTube */}
+                <div className="flex items-center justify-center gap-2 sm:gap-2.5">
+                  {STAT_PLATFORMS.slice(3, 6).map((platform) => (
+                    <a
+                      key={platform.name}
+                      href={platform.href}
+                      target={platform.href.startsWith("http") ? "_blank" : undefined}
+                      rel={platform.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="relative group/platform cursor-pointer block"
+                      onMouseEnter={() => setActivePlatformTooltip(platform.label)}
+                      onMouseLeave={() => setActivePlatformTooltip(null)}
+                      aria-label={`Open ${platform.label} (${OWNER_INFO.name})`}
+                    >
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#050D24] border border-[#D4AF37]/40 group-hover/platform:border-[#FFF4C2] group-hover/platform:scale-125 group-hover/platform:-translate-y-1 transition-all duration-200 flex items-center justify-center p-1 shadow-sm">
+                        <BrandIcon name={platform.name} size={14} mode="authentic" />
+                      </div>
+                      {activePlatformTooltip === platform.label && (
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-[#020614] border border-[#D4AF37]/50 text-[10px] font-bold text-[#FFF4C2] whitespace-nowrap z-30 shadow-xl pointer-events-none backdrop-blur-md flex items-center gap-1">
+                          <span>{platform.label}</span>
+                          <span className="text-[#38BDF8]">↗</span>
+                        </div>
+                      )}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
