@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import {
   Star,
   MessageSquareQuote,
@@ -109,6 +109,86 @@ export const ReviewsSection: React.FC = () => {
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  // Touch & Swipe Gesture Handlers (for mobile devices & touchscreen laptops)
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const touchEndY = useRef<number | null>(null);
+  const mouseStartX = useRef<number | null>(null);
+  const mouseStartY = useRef<number | null>(null);
+  const isMouseDown = useRef(false);
+  const minSwipeDistance = 45; // Minimum travel in px to trigger next/prev slide
+
+  // Touch event listeners for mobile phones & touchscreens
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsPaused(true);
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchStartY.current = e.targetTouches[0].clientY;
+    touchEndX.current = e.targetTouches[0].clientX;
+    touchEndY.current = e.targetTouches[0].clientY;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+    touchEndY.current = e.targetTouches[0].clientY;
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distanceX = touchStartX.current - touchEndX.current;
+    const distanceY = (touchStartY.current ?? 0) - (touchEndY.current ?? 0);
+
+    // Only swipe if horizontal motion is dominant (keeps natural vertical page scrolling)
+    if (Math.abs(distanceX) > Math.abs(distanceY) && Math.abs(distanceX) > minSwipeDistance) {
+      if (distanceX > 0) {
+        // Swiped left (finger moved right-to-left) -> Next review
+        handleNext();
+      } else {
+        // Swiped right (finger moved left-to-right) -> Previous review
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+    touchEndX.current = null;
+    touchEndY.current = null;
+  };
+
+  // Mouse drag handlers for desktop/laptop swipe
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (e.button !== 0) return;
+    setIsPaused(true);
+    isMouseDown.current = true;
+    mouseStartX.current = e.clientX;
+    mouseStartY.current = e.clientY;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (isMouseDown.current && mouseStartX.current !== null) {
+      const distanceX = mouseStartX.current - e.clientX;
+      const distanceY = (mouseStartY.current ?? 0) - e.clientY;
+      if (Math.abs(distanceX) > Math.abs(distanceY) && Math.abs(distanceX) > minSwipeDistance) {
+        if (distanceX > 0) {
+          handleNext();
+        } else {
+          handlePrev();
+        }
+      }
+    }
+    isMouseDown.current = false;
+    mouseStartX.current = null;
+    mouseStartY.current = null;
+    setIsPaused(false);
+  };
+
+  const handleMouseLeave = () => {
+    isMouseDown.current = false;
+    mouseStartX.current = null;
+    mouseStartY.current = null;
+    setIsPaused(false);
   };
 
   const handleCategoryChange = (cat: string) => {
@@ -223,9 +303,14 @@ export const ReviewsSection: React.FC = () => {
         {/* 3-Card Interactive Sliding Carousel */}
         <ScrollReveal delay={120} className="w-full">
           <div
-            className="relative overflow-hidden w-full py-2"
+            className="relative overflow-hidden w-full py-2 touch-pan-y select-none cursor-grab active:cursor-grabbing"
             onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
+            onMouseLeave={handleMouseLeave}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <div
               className="flex transition-transform duration-700 ease-in-out -mx-3"
