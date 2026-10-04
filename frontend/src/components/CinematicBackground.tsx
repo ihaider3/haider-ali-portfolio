@@ -21,7 +21,7 @@ export const CinematicBackground: React.FC = () => {
       {/* 02: User-Selected High-Impact Cinematic Background with Specular Gold Lines & Digital Icons */}
       <div className="absolute inset-0 opacity-80 sm:opacity-85 transition-opacity duration-700">
         <Image
-          src="/images/portfolio-bg.png"
+          src="/images/portfolio-dark-bg.png"
           alt="MH Marketing Cinematic Ambient Background"
           fill
           priority
