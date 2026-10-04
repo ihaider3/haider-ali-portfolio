@@ -153,6 +153,9 @@ export default function RootLayout({
         <link rel="image_src" href="https://mhmarketing.vercel.app/images/og-logo.png?v=logo-v5" />
         <link rel="icon" href="/images/logo/mh-marketing-32.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/logo/mh-marketing-192.png" />
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
