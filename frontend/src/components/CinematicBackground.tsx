@@ -21,12 +21,12 @@ export const CinematicBackground: React.FC = () => {
       {/* 02: User-Selected High-Impact Cinematic Background with Specular Gold Lines & Digital Icons */}
       <div className="absolute inset-0 opacity-80 sm:opacity-85 transition-opacity duration-700">
         <Image
-          src="/images/portfolio-dark-bg.png"
+          src="/images/portfolio-clean-bg.webp"
           alt="MH Marketing Cinematic Ambient Background"
           fill
           priority
           sizes="100vw"
-          quality={80}
+          quality={90}
           className="object-cover object-center"
         />
       </div>
